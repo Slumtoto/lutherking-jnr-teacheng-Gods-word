@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Knowledge Hub</title>
+    <style>
+        body { 
+            font-family: 'Georgia', serif; 
+            text-align: center; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(to right, #f7e4a9, #d4af37); 
+            color: #4A3D2A; 
+        }
+        header {
+            background: #8B7500; 
+            color: white; 
+            padding: 20px; 
+            font-size: 36px; 
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 2s;
+        }
+        section { 
+            padding: 40px; 
+            max-width: 800px; 
+            margin: auto; 
+            background: white; 
+            border-radius: 15px; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .verse { 
+            font-style: italic; 
+            color: #8B7500; 
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #8B7500;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        button {
+            background: #8B7500; 
+            color: white; 
+            border: none; 
+            padding: 14px 28px; 
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.4s;
+        }
+        button:hover {
+            background: #A88D00;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+
+    </div>
+    <header>Welcome to the Path of Islam</header>
+    <nav>
+        <a href="muslim.html">Christian Page</a>
+        <a href="Gods.html">Islamic Page</a>
+    </nav>
+    <section>
+        <h2>Allah is the Eternal</h2>
+        <p>Allah is the Most Merciful, the Creator of the Universe, full of wisdom and justice.</p>
+        <p class="verse">"Indeed, with hardship comes ease." - Quran 94:6</p>
+    </section>
+    <section class="quiz-section">
+        <h2>Islamic Quiz</h2>
+        <p>Who was the last prophet of Islam?</p>
+        <button onclick="checkAnswer('Prophet Muhammad', 'quiz-feedback1')">Prophet Muhammad</button>
+        <button onclick="checkAnswer('Prophet Musa', 'quiz-feedback1')">Prophet Musa</button>
+        <p id="quiz-feedback1"></p>
+        
+        <p>How many times do Muslims pray daily?</p>
+        <button onclick="checkAnswer('Five', 'quiz-feedback2')">Five</button>
+        <button onclick="checkAnswer('Three', 'quiz-feedback2')">Three</button>
+        <p id="quiz-feedback2"></p>
+        
+        <p>What is the holy book of Islam?</p>
+        <button onclick="checkAnswer('Quran', 'quiz-feedback3')">Quran</button>
+        <button onclick="checkAnswer('Torah', 'quiz-feedback3')">Torah</button>
+        <p id="quiz-feedback3"></p>
+        
+        <button onclick="loadMoreQuiz()">More Quiz</button>
+        <div id="more-quiz" style="display:none;">
+            <p>What is the name of the night journey of Prophet Muhammad (SAW)?</p>
+            <button onclick="checkAnswer('Isra and Miraj', 'quiz-feedback4')">Isra and Miraj</button>
+            <button onclick="checkAnswer('Hijrah', 'quiz-feedback4')">Hijrah</button>
+            <p id="quiz-feedback4"></p>
+            
+            <p>What is the first pillar of Islam?</p>
+            <button onclick="checkAnswer('Shahada', 'quiz-feedback5')">Shahada</button>
+            <button onclick="checkAnswer('Zakat', 'quiz-feedback5')">Zakat</button>
+            <p id="quiz-feedback5"></p>
+        </div>
+    </section>
+    <section class="video-section">
+        <h2>Islamic Lecture</h2>
+        <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=5YGri90KUjU" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section class="prayer-section">
+        <h2>Submit a Dua Request</h2>
+        <p>If you need prayers, please submit your request below. We will pray for you.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required><br>
+            <textarea placeholder="Your Dua Request" rows="4" required></textarea><br>
+            <button type="submit">Submit Dua</button>
+        </form>
+    </section>
+    <script>
+        function checkAnswer(answer, feedbackId) {
+            let correctAnswers = {
+                'quiz-feedback1': 'Prophet Muhammad',
+                'quiz-feedback2': 'Five',
+                'quiz-feedback3': 'Quran',
+                'quiz-feedback4': 'Isra and Miraj',
+                'quiz-feedback5': 'Shahada'
+            };
+            if (answer === correctAnswers[feedbackId]) {
+                document.getElementById(feedbackId).innerText = "Correct!";
+            } else {
+                document.getElementById(feedbackId).innerText = "Try again!";
+            }
+        }
+        function loadMoreQuiz() {
+            document.getElementById('more-quiz').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
